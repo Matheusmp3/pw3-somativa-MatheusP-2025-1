@@ -11,6 +11,8 @@ import ListBook from './components/pages/ListBook'
 import DetailBook from './components/pages/DetailBook'
 /* Importa o componente de alteração de livro */
 import UpdateBooks from './components/pages/UpdateBooks'
+import DeleteBook from './components/pages/DeleteBook'
+
 
 /* IMPORTAÇÃO DO NAVBAR */
 import NavBar from './components/layout/NavBar'
@@ -19,7 +21,7 @@ function App() {
 
   return (
     <>
-    
+
       <div>
 
         <BrowserRouter>
@@ -35,7 +37,9 @@ function App() {
                 <Route path='/listBook' element={<ListBook />} />
                 <Route path='/detailBook/:cod_livro' element={<DetailBook />} />
                 <Route path='/updateBook/:cod_livro' element={<UpdateBooks />} />
-    
+                <Route path='/deleteBook/:cod_livro' element={<DeleteBook />} />
+
+
               </Route>
 
             </Routes>

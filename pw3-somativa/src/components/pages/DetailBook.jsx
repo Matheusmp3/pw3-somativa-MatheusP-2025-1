@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import style from './DetailBook.module.css'
 import Button from '../Button'
 
-import cavernas from '../../assets/cavernas_aco.jpg'
+import danca_morte from '../../assets/A dança da morte.PNG'
 
 const DetailBook = () => {
 
@@ -40,7 +40,7 @@ const DetailBook = () => {
         <div className={style.grid}>
             
             <div className={style.container_img}>
-                <img className={style.img_book_detail} src={cavernas} alt='Capa do livro: As cavernas de aço' />
+                <img className={style.img_book_detail} src={danca_morte} alt='Capa do livro: As cavernas de aço' />
             </div>
 
             <div className={style.info}>

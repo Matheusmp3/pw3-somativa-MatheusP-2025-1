@@ -1,54 +1,56 @@
-import React, { use } from "react";
+import React from "react";
 import style from './ListBook.module.css'
+
 import { useState, useEffect } from "react";
-import cavernas from '../../assets/cavernas_aco.jpg'
+
+import iluminado from "../../assets/O iluminado.png"
+
 import BookCard from "../BookCard";
+
 import ContainerBook from "../layout/ContainerBook";
-const ListBook = ()=>{
 
-    const [books, setBooks] = useState([])
+const ListBook = () => {
 
-    useEffect(()=>{
 
+    const [books, setBooks] = useState([]);
+
+    useEffect(() => {
         fetch('http://127.0.0.1:5000/listagemLivros', {
             method: 'GET',
             mode: 'cors',
-            headers:{
+            headers: {
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Headers': '*',
+                'Acess-Control-Allow-Origin': '*',
+                'Acess-Control-Allow-Headers': '*',
+
             }
         })
-        .then((resp) => resp.json())
-        .then((bookdata) => {
-            console.log(bookdata.data)
-            setBooks(bookdata.data)
-        })
-        .catch((err) => {
-            console.log(err)
-        });
-    
-
-    },[])
-
-    return(
+            .then((resp) => resp.json())
+            .then((bookData) => {
+                console.log(bookData.data);
+                setBooks(bookData.data);
+            })
+            .catch((err) => { console.log(err) });
+    }, []);
+    return (
         <section>
-            <h1>LIST BOOK</h1> 
-            <ContainerBook>
-            {
-                books.map((book)=>(
 
-                    <BookCard 
-                        cod_livro={book.cod_livro}
-                        nome_livro= {book.nome_livro}
-                        autor_livro={book.autor_livro}
-                        imagem={cavernas}
-                        key={book.cod_livro}
-                    />
-                ))
-            }
+            <h1>LIST BOOK</h1>
+
+            <ContainerBook>
+                {
+                    books.map((book) => (
+                        <BookCard
+                            cod_livro={book.cod_livro}
+                            nome_livro={book.nome_livro}
+                            autor_livro={book.autor_livro}
+                            imagem={iluminado}
+                            key={book.cod_livro}
+                        />
+                    ))
+                }
             </ContainerBook>
-           
+
         </section>
     )
 }

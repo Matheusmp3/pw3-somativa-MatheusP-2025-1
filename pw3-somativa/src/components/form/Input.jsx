@@ -1,21 +1,20 @@
-import React from 'react'
-import  style from './input.module.css'
+import styles from './Input.module.css';
 
-function Input({type, text, name, id, placeholder, value, handlerChange}){
-  return(
-    <div className={style.form_control}>
+function Input({type ,text, name, id, placeholder, value, handlerChange}){
+     return(
+    <div className= {styles.form_control }>
 
-      <label htmlFor={name}>{text}</label>
-      <input 
+        <label htmlFor={name}>{text}</label>
+        <input
         type={type}
-        name={name}
+        name= {name}
         id={id}
-        placeholder={placeholder} 
+        placeholder={placeholder}
         value={value}
         onChange={handlerChange}
         />
-    </div>
-  )
+        </div>
+        )
 }
 
-export default Input
+export default Input;
