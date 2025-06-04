@@ -1,9 +1,10 @@
 .navbar{
     display: flex;
     /* flex-direction: column; */
+    
     justify-content: space-between;
     background-color: #000154;
-    padding: 1em;
+    /* padding: 1em; */
 }
 
 .list{
@@ -31,4 +32,4 @@
 
 .logo{
     width: 120px;
-}
+}                    

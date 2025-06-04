@@ -14,10 +14,10 @@ const CreateBook = ()=>{
 
     /* CRIA A ESTRUTURA DE STATE PARA OS DADOS DE CATEGORIA */
     const [categories, setCategories] = useState([]);
-
-    /* CRIA UM OBJETO DE useNavigate */
+    /**
+        * O useNavigate é um hook do React Router que permite navegar programaticamente entre as rotas da aplicação.
+     */
     const navigate = useNavigate();
-
     //Captura de dados dos elementos de input
     function handlerChangeBook(event){
         setBook({...book, [event.target.name] : event.target.value});
@@ -45,19 +45,20 @@ const CreateBook = ()=>{
                 'Access-Control-Allow-Origin':'*',
                 'Access-Control-Allow-Headers':'*'
             },
+
         }).then((resp)=>
             resp.json()
         ).then((categorias)=>{
             console.log('TESTE: ' + categorias.data);
-            setCategories(categorias.data);
+           // setCategories(categorias.data)
         }).catch((error)=>{
             console.log('ERRO: ' + error);
         })
     }, []);
 
-    /* INSERÇÃO DE LIVRO */
-    function insertBook(book) {
-        
+    /*INSERCÃO DE LIVRO */
+    function insertBook(book){
+
         fetch('http://127.0.0.1:5000/inserirLivro', {
             method:'POST',
             mode:'cors',
@@ -71,13 +72,11 @@ const CreateBook = ()=>{
             resp.json()
         ).then((respJSON)=>{
             console.log('RESPOSTA: ' + respJSON);
-            navigate('/listBook');
+            navigate('/listBook')
         }).catch((error)=>{
             console.log('ERRO: ' + error);
         })
-
     }
-
     return(
 
         <section className={style.create_book_container}>

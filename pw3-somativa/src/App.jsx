@@ -9,6 +9,8 @@ import Home from './components/pages/Home'
 import CreateBook from './components/pages/CreateBook'
 import ListBook from './components/pages/ListBook'
 import DetailBook from './components/pages/DetailBook'
+/* Importa o componente de alteração de livro */
+import UpdateBooks from './components/pages/UpdateBooks'
 
 /* IMPORTAÇÃO DO NAVBAR */
 import NavBar from './components/layout/NavBar'
@@ -32,7 +34,8 @@ function App() {
                 <Route path='/newBook' element={<CreateBook />} />
                 <Route path='/listBook' element={<ListBook />} />
                 <Route path='/detailBook/:cod_livro' element={<DetailBook />} />
-
+                <Route path='/updateBook/:cod_livro' element={<UpdateBooks />} />
+    
               </Route>
 
             </Routes>

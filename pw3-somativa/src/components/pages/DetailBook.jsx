@@ -76,4 +76,3 @@ const DetailBook = () => {
 }
 
 export default DetailBook
-

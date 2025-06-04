@@ -8,7 +8,7 @@ const Button = ({label, router, cod_livro})=>{
                     <button>{label}</button>
                 </Link>
             </div>
-    )  
+    ) 
 }
 
 export default Button
